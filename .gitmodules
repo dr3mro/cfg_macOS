@@ -3,7 +3,8 @@
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 [submodule "autoupdate"]
 	path = .oh-my-zsh-plugins/autoupdate
-	url =[submodule "zsh-autosuggestions"]
+	url = git@github.com:TamCore/autoupdate-oh-my-zsh-plugins.git
+[submodule "zsh-autosuggestions"]
 	path = .oh-my-zsh-plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
 [submodule "zsh-completions"]
