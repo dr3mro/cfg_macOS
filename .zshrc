@@ -99,5 +99,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias htop="sudo htop"
 alias config='/usr/bin/git --git-dir=/Users/amr/.cfg/ --work-tree=/Users/amr'
-alias zsh-plugins-install='config submodule init && config submodule update'
-alias zsh-plugins-link='for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins/;done'
+alias setup-zsh-plugins='config submodule init && config submodule update && for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins;done'
