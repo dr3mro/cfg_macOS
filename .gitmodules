@@ -3,13 +3,12 @@
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 [submodule "autoupdate"]
 	path = /Users/amr/.oh-my-zsh/custom/plugins/autoupdate
-	url = git@github.com:TamCore/autoupdate-oh-my-zsh-plugins.git
-[submodule "zsh-autosuggestions"]
-	path = /Users/amr/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url =[submodule "zsh-autosuggestions"]
+	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
 [submodule "zsh-completions"]
-	path = /Users/amr/.oh-my-zsh/custom/plugins/zsh-completions
+	path = .oh-my-zsh/custom/plugins/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git
 [submodule "zsh-syntax-highlighting"]
-	path = /Users/amr/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
