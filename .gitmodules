@@ -2,14 +2,14 @@
 	path = .oh-my-zsh
 	url = /Users/amr/.oh-my-zsh
 [submodule "autoupdate"]
-	path = autoupdate
+	path = /Users/amr/.oh-my-zsh/custom/plugins/autoupdate
 	url = /Users/amr/.oh-my-zsh/custom/plugins/autoupdate
 [submodule "zsh-autosuggestions"]
-	path = zsh-autosuggestions
+	path = /Users/amr/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = /Users/amr/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 [submodule "zsh-completions"]
-	path = zsh-completions
+	path = /Users/amr/.oh-my-zsh/custom/plugins/zsh-completions
 	url = /Users/amr/.oh-my-zsh/custom/plugins/zsh-completions
 [submodule "zsh-syntax-highlighting"]
-	path = zsh-syntax-highlighting
+	path = /Users/amr/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = /Users/amr/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
