@@ -2,7 +2,7 @@
 	path = .oh-my-zsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 [submodule "autoupdate"]
-	path = /Users/amr/.oh-my-zsh/custom/plugins/autoupdate
+	path = .oh-my-zsh/custom/plugins/autoupdate
 	url =[submodule "zsh-autosuggestions"]
 	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
