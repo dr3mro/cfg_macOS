@@ -7,3 +7,9 @@ config submodule init
 config submodule update
 source .zshrc
 setup-zsh-plugins
+
+
+-- to make stop not ask for password
+sudo visudo and add the following line
+
+%localaccounts ALL=NOPASSWD: /usr/local/bin/htop
