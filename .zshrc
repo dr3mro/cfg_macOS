@@ -69,9 +69,8 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git autoupdate zsh-completions zsh-autosuggestions zsh-syntax-highlighting )
-autoload -Uz compinit && compinit
 source $ZSH/oh-my-zsh.sh
-
+autoload -Uz compinit && compinit
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
