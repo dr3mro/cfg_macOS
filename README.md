@@ -38,6 +38,7 @@ config reset --hard\
 config submodule init\
 config submodule update\
 source .zshrc\
+compaudit | xargs chmod g-w,o-w\
 setup-zsh-plugins
 
 
