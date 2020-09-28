@@ -109,3 +109,4 @@ export NETSTORAGE='/Users/amr/Library/Containers/com.wdc.WDDesktop.WDDesktopFind
 
 
 
+export PATH="/usr/local/opt/qt/bin:$PATH"
