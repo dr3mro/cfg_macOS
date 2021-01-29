@@ -104,7 +104,7 @@ alias mSync='rsync -PautHAXv --exclude=".*" --exclude="._*"'
 alias mSyncd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete'
 export STORAGE='/Volumes/Storage'
 export XSTORAGE='/Volumes/XStorage'
-export NETSTORAGE='$HOME/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSync/Data/volumes/b043273e-c271-443d-b4fe-b6b837787e0a/NetStorage/XStorage'
+export NETSTORAGE='/Users/amr/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSync/Data/volumes/b043273e-c271-443d-b4fe-b6b837787e0a/NetStorage/XStorage'
 
 
 
