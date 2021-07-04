@@ -97,16 +97,17 @@ autoload -Uz compinit && compinit
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias htop="sudo htop"
+export SUDO_ASKPASS=/usr/local/bin/askpass
+
+alias htop="sudo -A htop"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias setup-zsh-plugins='config submodule init && config submodule update && for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins;done'
 alias mSync='rsync -PautHAXv --exclude=".*" --exclude="._*"'
 alias mSyncd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete'
 export STORAGE='/Volumes/Storage'
 export XSTORAGE='/Volumes/XStorage'
-export NETSTORAGE='/Users/amr/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSync/Data/volumes/b043273e-c271-443d-b4fe-b6b837787e0a/NetStorage/XStorage'
+export NETSTORAGE='$HOME/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSync/Data/volumes/b043273e-c271-443d-b4fe-b6b837787e0a/NetStorage/XStorage'
+112a114
 
-
-
-
+export PATH="$(echo /usr/local/Cellar/llvm/*/bin):$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
