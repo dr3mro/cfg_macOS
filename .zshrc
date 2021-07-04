@@ -107,7 +107,6 @@ alias mSyncd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete'
 export STORAGE='/Volumes/Storage'
 export XSTORAGE='/Volumes/XStorage'
 export NETSTORAGE='$HOME/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSync/Data/volumes/b043273e-c271-443d-b4fe-b6b837787e0a/NetStorage/XStorage'
-112a114
 
 export PATH="$(echo /usr/local/Cellar/llvm/*/bin):$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
