@@ -41,6 +41,8 @@ source .zshrc\
 compaudit | xargs chmod g-w,o-w\
 setup-zsh-plugins
 
+run:
+.bin/mac-askpass.sh
 
 -- to make stop not ask for password
 sudo visudo and add the following line
