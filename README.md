@@ -48,3 +48,4 @@ run:
 sudo visudo and add the following line
 
 %localaccounts ALL=NOPASSWD: /usr/local/bin/htop
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
