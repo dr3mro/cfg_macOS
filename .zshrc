@@ -119,7 +119,7 @@ export NETSTORAGE='$HOME/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSyn
 
 export PATH="$(echo /usr/local/Cellar/llvm/*/bin):$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
-
+export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 # Set sudo helper.
 export SUDO_ASKPASS=/usr/local/bin/askpass
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
