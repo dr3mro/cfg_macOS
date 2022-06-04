@@ -111,11 +111,6 @@ alias resetIconCache='sudo rm -rfv /Library/Caches/com.apple.iconservices.store;
 alias htop="sudo -A htop"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias setup-zsh-plugins='config submodule init && config submodule update && for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins;done'
-alias mSync='rsync -PautHAXv --exclude=".*" --exclude="._*"'
-alias mSyncd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete'
-export STORAGE='/Volumes/Storage'
-export XSTORAGE='/Volumes/XStorage'
-export NETSTORAGE='$HOME/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSync/Data/volumes/b043273e-c271-443d-b4fe-b6b837787e0a/NetStorage/XStorage'
 
 if [[ $OSTYPE == 'darwin'* ]]; then
 	export PATH="$(echo /usr/local/Cellar/llvm/*/bin):$PATH"
@@ -123,6 +118,12 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 	# Set sudo helper.
 	export SUDO_ASKPASS=/usr/local/bin/askpass
 	source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+	alias syncn2l='rsync -PautHAXv --exclude=".*" --exclude="._*" /Volumes/NetStorage/* /Volumes/Storage'
+	alias syncn2ld='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete /Volumes/NetStorage/* /Volumes/Storage'
+	alias syncl2n='rsync -PautHAXv --exclude=".*" --exclude="._*" /Volumes/Storage/*  /Volumes/NetStorage/'
+	alias syncl2nd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete  /Volumes/Storage/*  /Volumes/NetStorage/'
+	alias syncl2x='rsync -PautHAXv --exclude=".*" --exclude="._*" /Volumes/Storage/*  /Volumes/XStorage/'
+	alias syncl2xd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete  /Volumes/Storage/*  /Volumes/XStorage/'
 else
 	source ~/.powerlevel10k/powerlevel10k.zsh-theme	
 fi
