@@ -31,15 +31,23 @@ Awesome! You’re done.
 
 
 # How to install 
-
+```
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'\
 config clone  --bare git@github.com:dr3mro/cfg_macOS.git $HOME/.cfg\
 config reset --hard\
 config submodule init\
 config submodule update\
+```
+```
 source .zshrc\
+```
+
+```
 compaudit | xargs chmod g-w,o-w\
+```
+```
 setup-zsh-plugins
+```
 
 run:
 .bin/mac-askpass.sh
