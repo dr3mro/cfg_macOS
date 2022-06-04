@@ -37,8 +37,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 ```
 config clone  --bare git@github.com:dr3mro/cfg_macOS.git $HOME/.cfg\
-config reset --hard\
-config submodule init\
+config reset --hard 
+config submodule init
 config submodule update
 ```
 ```
