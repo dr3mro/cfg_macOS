@@ -117,12 +117,17 @@ export STORAGE='/Volumes/Storage'
 export XSTORAGE='/Volumes/XStorage'
 export NETSTORAGE='$HOME/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSync/Data/volumes/b043273e-c271-443d-b4fe-b6b837787e0a/NetStorage/XStorage'
 
-export PATH="$(echo /usr/local/Cellar/llvm/*/bin):$PATH"
-export PATH="/usr/local/opt/qt/bin:$PATH"
-export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
-# Set sudo helper.
-export SUDO_ASKPASS=/usr/local/bin/askpass
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+if [[ $OSTYPE == 'darwin'* ]]; then
+	export PATH="$(echo /usr/local/Cellar/llvm/*/bin):$PATH"
+	export PATH="/usr/local/opt/qt/bin:$PATH"
+	# Set sudo helper.
+	export SUDO_ASKPASS=/usr/local/bin/askpass
+	source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+else
+	source ~/.powerlevel10k/powerlevel10k.zsh-theme	
+fi
 
+
+export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
