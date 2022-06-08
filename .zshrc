@@ -108,11 +108,12 @@ export SUDO_ASKPASS=/usr/local/bin/askpass
 
 alias resetIconCache='sudo rm -rfv /Library/Caches/com.apple.iconservices.store; sudo find /private/var/folders/ \( -name com.apple.dock.iconcache -or -name com.apple.iconservices \) -exec rm -rfv {} \; ; sleep 3;sudo touch /Applications/* ; killall Dock; killall Finder'
 
-alias htop="sudo -A htop"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias setup-zsh-plugins='config submodule init && config submodule update && for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins;done'
 
 if [[ $OSTYPE == 'darwin'* ]]; then
+	
+	alias htop="sudo -A htop"
 	export PATH="$(echo /usr/local/Cellar/llvm/*/bin):$PATH"
 	export PATH="/usr/local/opt/qt/bin:$PATH"
 	# Set sudo helper.
@@ -132,3 +133,4 @@ fi
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
