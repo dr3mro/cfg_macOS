@@ -34,7 +34,7 @@ dotfiles push
 > ###### Make sure to have git installed, then:
 > ###### clone your github repository
 ```
-git clone --bare https://github.com/USERNAME/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:dr3mro/cfg_macOS.git $HOME/.dotfiles
 ```
 > ###### define the alias in the current shell scope
 ```
