@@ -135,4 +135,4 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
-ZSH_DISABLE_COMPFIX=true
+export ZSH_DISABLE_COMPFIX=true
