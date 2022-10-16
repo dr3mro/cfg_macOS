@@ -81,7 +81,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git autoupdate zsh-completions zsh-autosuggestions zsh-syntax-highlighting )
 source $ZSH/oh-my-zsh.sh
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -i
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
