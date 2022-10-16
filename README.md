@@ -89,3 +89,16 @@ sudo visudo and add the following line
 
 %localaccounts ALL=NOPASSWD: /usr/local/bin/htop
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+
+
+
+-- make root shell use the same theme
+```
+ln -s /home/amr/.cfg /root/
+ln -s /home/amr/.oh-my-zsh /root/
+ln -s /home/amr/.oh-my-zsh-plugins /root/
+ln -s /home/amr/.p10k.zsh /root/
+ln -s /home/amr/.powerlevel10k /root/
+ln -s /home/amr/.zshrc /root/
+```
