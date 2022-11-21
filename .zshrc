@@ -137,6 +137,7 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
+clear
 neofetch | lolcat
 fortune | cowsay | lolcat
 
