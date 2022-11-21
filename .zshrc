@@ -140,4 +140,4 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 clear
 neofetch | lolcat
 fortune | cowsay | lolcat
-
+#zle-line-finish(){ export BUFFER="$BUFFER | lolcat" }
