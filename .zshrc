@@ -141,3 +141,6 @@ clear
 neofetch | lolcat
 fortune | cowsay | lolcat
 #zle-line-finish(){ export BUFFER="$BUFFER | lolcat" }
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
