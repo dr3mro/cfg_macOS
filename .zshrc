@@ -138,7 +138,7 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 clear
-neofetch | lolcat
+neofetch
 fortune | cowsay | lolcat
 #zle-line-finish(){ export BUFFER="$BUFFER | lolcat" }
 
