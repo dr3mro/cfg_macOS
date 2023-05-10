@@ -13,6 +13,6 @@
 [submodule ".oh-my-zsh-plugins/zsh-autosuggestions"]
 	path = .oh-my-zsh-plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
-[submodule "/home/amr/.vcpkg"]
-	path = /home/amr/.vcpkg
+[submodule ".vcpkg"]
+	path = .vcpkg
 	url = https://github.com/microsoft/vcpkg
