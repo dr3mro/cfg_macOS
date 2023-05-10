@@ -140,23 +140,23 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
-<<<<<<< HEAD
 clear
 neofetch
 fortune | cowsay | lolcat
-=======
 #clear
 #neofetch | lolcat
 #fortune | cowsay | lolcat
->>>>>>> 6a97982b16fb20083aae1884679c9d30c04c1d53
 #zle-line-finish(){ export BUFFER="$BUFFER | lolcat" }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-export VCPKG_ROOT=/Users/amr/.vcpkg
+
+export VCPKG_ROOT=$HOME/.vcpkg
+source $HOME/.vcpkg/scripts/vcpkg_completion.zsh
 
 autoload bashcompinit
 bashcompinit
-source /Users/amr/.vcpkg/scripts/vcpkg_completion.zsh
+
+
