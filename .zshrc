@@ -81,8 +81,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( env git autoupdate)
-#zsh-completions zsh-autosuggestions zsh-syntax-highlighting )
+plugins=(git autoupdate zsh-completions zsh-autosuggestions zsh-syntax-highlighting  autoenv)
 source $ZSH/oh-my-zsh.sh
 #autoload -Uz compinit && compinit -i
 # User configuration

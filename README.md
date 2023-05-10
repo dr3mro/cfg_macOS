@@ -72,6 +72,11 @@ source .zshrc
 compaudit | xargs chmod g-w,o-w
 ```
 ```
+pip install autoenv
+```
+
+
+```
 setup-zsh-plugins
 ```
 ### on mac
