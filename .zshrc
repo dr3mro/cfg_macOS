@@ -115,7 +115,6 @@ alias resetIconCache='sudo rm -rfv /Library/Caches/com.apple.iconservices.store;
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias setup-zsh-plugins='config submodule init && config submodule update && for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins;done'
-alias lvim="/Users/amr/.local/bin/lvim"
 if [[ $OSTYPE == 'darwin'* ]]; then
 	
 	alias htop="sudo -A htop"
@@ -157,5 +156,5 @@ source $HOME/.vcpkg/scripts/vcpkg_completion.zsh
 
 autoload bashcompinit
 bashcompinit
-
+export PATH=$HOME/.local/bin:$PATH
 
