@@ -156,5 +156,5 @@ source $HOME/.vcpkg/scripts/vcpkg_completion.zsh
 
 autoload bashcompinit
 bashcompinit
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.vcpkg:$PATH
 
