@@ -16,6 +16,3 @@
 [submodule ".vcpkg"]
 	path = .vcpkg
 	url = https://github.com/microsoft/vcpkg
-[submodule ".oh-my-zsh-plugins/env"]
-	path = .oh-my-zsh-plugins/env-zsh 
-	url = https://github.com/johnhamelink/env-zsh.git
