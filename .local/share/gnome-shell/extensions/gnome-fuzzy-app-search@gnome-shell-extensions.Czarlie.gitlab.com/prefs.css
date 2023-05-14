@@ -1,0 +1,7 @@
+.gnome-fuzzy-app-search-prefs-box,
+.gnome-fuzzy-app-search-prefs-box > border { border: 0 none; }
+.gnome-fuzzy-app-search-prefs-input { padding: 0.5em; }
+.gnome-fuzzy-app-search-prefs-page { padding: 2em; }
+.gnome-fuzzy-app-search-prefs-page-about-title { font-weight: bold; }
+.gnome-fuzzy-app-search-prefs-page-about-description { padding: 2em; }
+.gnome-fuzzy-app-search-prefs-page-about-license { font-size: 0.8em; padding-top: 2em; }

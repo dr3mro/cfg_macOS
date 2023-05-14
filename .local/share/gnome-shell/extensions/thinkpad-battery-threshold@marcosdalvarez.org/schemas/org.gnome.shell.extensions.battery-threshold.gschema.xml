@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+
+    <enum id="org.gnome.shell.extensions.thinkpad-battery-threshold.indicator-mode">
+        <value value="0" nick="ACTIVE" />
+        <value value="1" nick="INACTIVE" />
+        <value value="2" nick="ALWAYS" />
+        <value value="3" nick="NEVER" />
+    </enum>
+    
+    <schema id="org.gnome.shell.extensions.thinkpad-battery-threshold" path="/org/gnome/shell/extensions/thinkpad-battery-threshold/">
+        <!-- See also: https://docs.gtk.org/glib/gvariant-format-strings.html -->
+
+        <!-- UI settings -->
+        <key name="indicator-mode" enum="org.gnome.shell.extensions.thinkpad-battery-threshold.indicator-mode">
+            <default>"ACTIVE"</default>
+            <summary>Set when the Icon tray should appear in Gnome tray</summary>
+        </key>
+        <key name="show-current-values" type="b">
+            <default>true</default>
+            <summary>Show current threshold values in labels</summary>
+        </key>
+        <key name="show-notifications" type="b">
+            <default>true</default>
+            <summary>Show notifications</summary>
+        </key>
+        <key name="color-mode" type="b">
+            <default>true</default>
+            <summary>Color mode</summary>
+        </key>
+
+        <!-- Driver settings -->
+        <key name="debug-mode" type="b">
+            <default>false</default>
+            <summary>Debug mode</summary>
+        </key>
+        <key name="disable-model-verification-check" type="b">
+            <default>false</default>
+            <summary>Disable model verification</summary>
+        </key>
+
+        <!-- Thresholds values -->
+        <key name="start-bat0" type="i">
+            <default>75</default>
+            <summary>Start charging when the level is below this value</summary>
+        </key>
+        <key name="end-bat0" type="i">
+            <default>80</default>
+            <summary>Stop charging when the level is above this value</summary>
+        </key>
+        <key name="start-bat1" type="i">
+            <default>0</default>
+            <summary>Start charging when the level is below this value</summary>
+        </key>
+        <key name="end-bat1" type="i">
+            <default>100</default>
+            <summary>Stop charging when the level is above this value</summary>
+        </key>
+    </schema>
+</schemalist>
