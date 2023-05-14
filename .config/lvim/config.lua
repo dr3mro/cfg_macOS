@@ -122,6 +122,9 @@ lvim.plugins = {
     "jesseduffield/lazygit",
     "nvim-pack/nvim-spectre",
     "cdelledonne/vim-cmake",
+    "dense-analysis/neural",
+    "muniftanjim/nui.nvim",
+    "elpiloto/significant.nvim",
   },
   --  {
   --       "folke/trouble.nvim",
