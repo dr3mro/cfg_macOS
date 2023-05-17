@@ -5,10 +5,10 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 
 ZSH_DISABLE_COMPFIX=true
-# if [ -z "$TMUX" ]
-# then
-#     tmux attach -t TMUX || tmux new -s TMUX
-# fi
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
