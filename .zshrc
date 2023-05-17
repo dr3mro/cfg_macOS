@@ -10,9 +10,9 @@ then
     tmux attach -t TMUX || tmux new -s TMUX
 fi
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -113,14 +113,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export SUDO_ASKPASS=/usr/local/bin/askpass
 
 alias resetIconCache='sudo rm -rfv /Library/Caches/com.apple.iconservices.store; sudo find /private/var/folders/ \( -name com.apple.dock.iconcache -or -name com.apple.iconservices \) -exec rm -rfv {} \; ; sleep 3;sudo touch /Applications/* ; killall Dock; killall Finder'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias setup-zsh-plugins='config submodule init && config submodule update && for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins;done'
 if [[ $OSTYPE == 'darwin'* ]]; then
-	
+  export SUDO_ASKPASS=/usr/local/bin/askpass
 	alias htop="sudo -A htop"
 	export PATH="$(echo /usr/local/Cellar/llvm/*/bin):$PATH"
 	export PATH="/usr/local/opt/qt/bin:$PATH"
@@ -133,8 +132,10 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 	alias syncl2nd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete  /Volumes/Storage/*  /Volumes/NetStorage/'
 	alias syncl2x='rsync -PautHAXv --exclude=".*" --exclude="._*" /Volumes/Storage/*  /Volumes/XStorage/'
 	alias syncl2xd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete  /Volumes/Storage/*  /Volumes/XStorage/'
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 else
-	#source ~/.powerlevel10k/powerlevel10k.zsh-theme	
+	export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH
+  #source ~/.powerlevel10k/powerlevel10k.zsh-theme	
 fi
 
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
@@ -149,10 +150,6 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 #fortune | cowsay | lolcat
 #zle-line-finish(){ export BUFFER="$BUFFER | lolcat" }
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 export VCPKG_ROOT=$HOME/.vcpkg
 source $HOME/.vcpkg/scripts/vcpkg_completion.zsh
@@ -160,4 +157,8 @@ source $HOME/.vcpkg/scripts/vcpkg_completion.zsh
 autoload bashcompinit
 bashcompinit
 export PATH=$HOME/.local/bin:$HOME/.vcpkg:$PATH
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
 

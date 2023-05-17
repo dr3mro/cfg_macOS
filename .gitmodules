@@ -19,3 +19,6 @@
 [submodule ".tmux"]
 	path = .tmux
 	url = https://github.com/gpakosz/.tmux.git
+[submodule "/home/amr/.tmux_plugins/tpm"]
+	path = /home/amr/.tmux_plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
