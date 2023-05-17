@@ -122,7 +122,7 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 	export PATH="/usr/local/opt/qt/bin:$PATH"
 	# Set sudo helper.
 	export SUDO_ASKPASS=/usr/local/bin/askpass
-	source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+	#source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 	alias syncn2l='rsync -PautHAXv --exclude=".*" --exclude="._*" /Volumes/NetStorage/* /Volumes/Storage'
 	alias syncn2ld='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete /Volumes/NetStorage/* /Volumes/Storage'
 	alias syncl2n='rsync -PautHAXv --exclude=".*" --exclude="._*" /Volumes/Storage/*  /Volumes/NetStorage/'
@@ -130,17 +130,16 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 	alias syncl2x='rsync -PautHAXv --exclude=".*" --exclude="._*" /Volumes/Storage/*  /Volumes/XStorage/'
 	alias syncl2xd='rsync -PautHAXv --exclude=".*" --exclude="._*" --delete  /Volumes/Storage/*  /Volumes/XStorage/'
 else
-	source ~/.powerlevel10k/powerlevel10k.zsh-theme	
+	#source ~/.powerlevel10k/powerlevel10k.zsh-theme	
 fi
-
 
 export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
-clear
-neofetch
-fortune | cowsay | lolcat
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#source ~/.powerlevel10k/powerlevel10k.zsh-theme
+#clear
+#neofetch
+# fortune | cowsay | lolcat
 #clear
 #neofetch | lolcat
 #fortune | cowsay | lolcat
