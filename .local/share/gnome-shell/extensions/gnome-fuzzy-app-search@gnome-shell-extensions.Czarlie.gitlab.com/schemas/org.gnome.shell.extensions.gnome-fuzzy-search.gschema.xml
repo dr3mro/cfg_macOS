@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="gnome-fuzzy-app-search">
-    <schema path="/org/gnome/shell/extensions/gnome-fuzzy-app-search/" id="org.gnome.shell.extensions.gnome-fuzzy-app-search">
-        <key name="applications" type="b">
-            <default>true</default>
-            <summary>Applications</summary>
-        </key>
-    </schema>
-</schemalist>
