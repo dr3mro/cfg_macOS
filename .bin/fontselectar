@@ -1,0 +1,102 @@
+#!/bin/bash
+##	  Default Arabic Language Selector 1.0
+##    This script help users to chose a default language for Ubuntu system.
+##    scripted by scripted by    2011   alz3abi,Aka NLP, Hz 
+##                                              2013   Amr Osman ,AKA dr3mro
+##    Please visit http://www.linuxac.org for any informations.
+##
+##    This program is free software: you can redistribute it and/or modify
+##    it under the terms of the GNU General Public License as published by
+##    the Free Software Foundation, either version 3 of the License, or
+##    (at your option) any later version.
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License
+##    along with this program. If not, see <http://www.gnu.org/licenses/>.
+_entry() {
+font=$(fc-list :lang=ar family | sed 's/\\//g' | tr "," "\n" | sort | uniq |\
+         zenity --list --column ""\
+                     --column "Font Name"\
+                     --radiolist --title="linuxac.org :: مجتمع لينوكس العربي"\
+                     --text="برجاء قم بإختيار أسم الخط المراد إختيارة ليكن الإفتراضي للغة العربية" )
+
+if [ "$font" == "" ]
+then 
+	dailog=`_window "لم تقم بتحديد خط معين لإجراء العملية\nهل تود ادخال اسم الخط يدويا ؟" question`
+	if [ $? == 0 ]; then
+		font=$(zenity   --entry\
+		                --title="Font"\
+		                --text="برجاء أدخال اسم الخط يدويا")
+    echo "$font";
+	    if [ "$font" ==	"" ]; then
+	        exit 0;    	                
+		fi;      
+
+	else
+		echo "Aborted .."
+		exit 0;	
+	fi
+fi
+}
+_window() {
+	/usr/bin/zenity  --$2  --title="linuxac.org :: مجتمع لينوكس العربي" --text="$1"
+}
+#----------------------------------
+# Check if zenity is installed...
+#----------------------------------
+if [ ! -e /usr/bin/zenity ]; then
+  echo "Zenity is required for this script, Would you like to install it now? [Y/n]"; read action
+  if [ "$action" == "y" ]; then
+    sudo apt-get -y --force-yes install zenity
+  else
+    echo "Aborted ..";
+    exit 0;
+  fi
+fi
+
+#----------------------------------
+# Test for SuperUser Privliges
+#----------------------------------
+if [ "$UID" != "0" ]; then
+    _window "عفواً، يتوجب عليك تشغيل هذا السكربت بصلاحيات الجذر\n$\sudo $0" error
+    exit 1
+fi
+
+#----------------------------------
+# Starting Script ...
+#----------------------------------
+# Wecloming ..
+_window "هذا السكربت سيساعدك على تحديد الخط الافتراضي للغة العربية" "info";
+
+# Chosing Font.
+_entry;
+
+# Building things.
+(
+	echo "10";sleep 1;
+	echo "# إنشاء ملف اللغة العربية"; sleep 1;
+	sudo echo -e "<?xml version=\"1.0\"?>\r\n<!DOCTYPE fontconfig SYSTEM \"fonts.dtd\">\r\n<fontconfig>\r\n\t<!-- Arabic (ar) -->\r\n\t<match target=\"pattern\">\r\n\t\t<test name=\"lang\" compare=\"contains\">\r\n\t\t\t<string>ar</string>\r\n\t\t</test>\r\n\t\t<test qual=\"any\" name=\"family\">\r\n\t\t\t<string>serif</string>\r\n\t\t</test>\r\n\t\t<edit name=\"family\" mode=\"prepend\" binding=\"strong\">\r\n\t\t\t<string>$font</string>\r\n\t\t</edit>\r\n\t</match>\r\n\r\n\r\n\t<match target=\"pattern\">\r\n\t\t<test name=\"lang\" compare=\"contains\">\r\n\t\t\t<string>ar</string>\r\n\t\t</test>\r\n\t\t<test qual=\"any\" name=\"family\">\r\n\t\t\t<string>sans-serif</string>\r\n\t\t</test>\r\n\t\t<edit name=\"family\" mode=\"prepend\" binding=\"strong\">\r\n\t\t\t<string>$font</string>\r\n\t\t</edit>\r\n\t</match>\r\n\r\n\r\n\t<match target=\"pattern\">\r\n\t\t<test name=\"lang\" compare=\"contains\">\r\n\t\t\t<string>ar</string>\r\n\t\t</test>\r\n\t\t<test qual=\"any\" name=\"family\">\r\n\t\t\t<string>monospace</string>\r\n\t\t</test>\r\n\t\t<edit name=\"family\" mode=\"prepend\" binding=\"strong\">\r\n\t\t\t<string>Thabit</string>\r\n\t\t   \r\n\t\t</edit>\r\n\t</match>\r\n\t<!-- Arabic (ar) ends -->\r\n</fontconfig>" > /etc/fonts/conf.d/69-language-selector-ar.conf;
+	echo "60";sleep 1;
+	echo "# انشاء إرتباط للملف "; sleep 1;
+	if [ ! -e /etc/fonts/conf.d/69-language-selector-ar.conf ]; then 
+		sudo ln -s /etc/fonts/conf.avail/69-language-selector-ar.conf /etc/fonts/conf.d/69-language-selector-ar.conf
+		re='y';	
+	fi
+	echo "100";
+	echo "# تمت العملية بنجاح"
+) | /usr/bin/zenity --progress --title="linuxac.org :: مجتمع لينوكس العربي" --text="جاري التطبيق ..." --percentage=0 --width="400"
+if [ "$re" != "y" ]; then
+	_window "هل تريد أعادة تشغيل خادم إكس ؟" question;
+	if [ $? == 0 ]; then
+		restartx='y';
+	fi
+fi
+_window "قم بزيارة مجتمع لينوكس العربي ، وستجد كل ما هو جديد ومفيد\nمعاً نجعل لينوكس أجمل.\nالحقوق محفوظة لأصحابها\nأخوكم: الزعـابي\nتم التعديل بواسطة د.عمرو عثمان ٢٠١٣" "info"
+if [ "$restartx" == "y" ]; then
+	echo "Restarting X server ...";
+	sudo pkill X;
+fi
