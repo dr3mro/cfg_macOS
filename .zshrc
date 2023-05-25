@@ -117,6 +117,10 @@ source $ZSH/oh-my-zsh.sh
 alias resetIconCache='sudo rm -rfv /Library/Caches/com.apple.iconservices.store; sudo find /private/var/folders/ \( -name com.apple.dock.iconcache -or -name com.apple.iconservices \) -exec rm -rfv {} \; ; sleep 3;sudo touch /Applications/* ; killall Dock; killall Finder'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+alias dotfiles_submodules_update='dotfiles submodule update --init --recursive'
+alias dotfiles_submodules_pull='dotfiles pull --recurse-submodules'
+
 dotfiles config --local status.showUntrackedFiles no
 alias setup-zsh-plugins='config submodule init && config submodule update && for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins;done'
 if [[ $OSTYPE == 'darwin'* ]]; then
