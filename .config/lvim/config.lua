@@ -125,6 +125,7 @@ lvim.plugins = {
     "dense-analysis/neural",
     "muniftanjim/nui.nvim",
     "elpiloto/significant.nvim",
+    -- "s1n7ax/nvim-terminal",
   },
   --  {
   --       "folke/trouble.nvim",
