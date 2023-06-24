@@ -120,7 +120,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias dotfiles_submodules_update='dotfiles submodule update --init --recursive'
 alias dotfiles_submodules_pull='dotfiles pull --recurse-submodules'
-
+alias bbcarabic='mpv https://stream.live.vc.bbcmedia.co.uk/bbc_arabic_radio'
 dotfiles config --local status.showUntrackedFiles no
 alias setup-zsh-plugins='config submodule init && config submodule update && for plugin in `ls ~/.oh-my-zsh-plugins/`;do ln -s ~/.oh-my-zsh-plugins/$plugin ~/.oh-my-zsh/custom/plugins;done'
 if [[ $OSTYPE == 'darwin'* ]]; then
